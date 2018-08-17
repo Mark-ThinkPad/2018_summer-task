@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>YUOL成绩查询系统</title>
+    <style>
+        *{
+    margin: 0 auto;
+    }
+    body{
+        width: 100%;
+        height: 100%;
+    }
+
+    .all {
+        width: 700px;
+        height: 100%;
+        border: 3px solid;
+        /* border-color: black; */
+    }
+
+
+    .info_form{
+        width: 250px;
+        height: 150px;
+    }
+
+    .center{
+        text-align: center;
+        width: 250px;
+    }
+
+    h1{
+        text-align: center;
+        line-height: 100px;
+    }
+
+    .info{
+        width: 100%;
+        height: 200px;
+        border-bottom: 3px solid;
+        border-top: 3px solid;
+    }
+
+
+    .grades{
+        /* padding-top: 20px; */
+        width: 100%;
+        height: 100%;
+
+        /* display: inline-block; */
+    }
+    .line{
+        line-height: 40px;
+        text-align: center;
+    }
+
+    .key{
+        float: left;
+        list-style: none;
+    }
+
+    .grade{
+        width: 100%;
+        height: 30px;
+    }
+
+
+    li{
+        float: left;
+        list-style: none;
+    }
+
+    .gg_info{
+        width: 250px;
+        height: 100%;
+        line-height: 30px;
+        text-align: center;
+        border-right: 2px solid;
+    }
+    .ggs_info{
+        width: 110px;
+        height: 100%;
+        line-height: 30px;
+        text-align: center;
+        border-right: 2px solid;
+    }
+
+
+    .g_info{
+        width: 80px;
+        height: 100%;
+        line-height: 30px;
+        text-align: center;
+        border-right: 2px solid;
+    }
+    ul{
+        padding: 0px;
+        width: 700px;
+        border-bottom: 1px solid;
+
+    }
+
+    .s_info{
+        width: 100%;
+        height: 50px;
+    }
+
+    .ss_info{
+        width: 84px;
+        height: 100%;
+        line-height: 50px;
+        text-align: center;
+        border-right: 2px solid;
+    }
+
+    .last{
+        border-right: 0px;
+    }
+
+    .faculty{
+        width: 172px;
+    }
+
+    .classroom{
+        width: 140px;
+    }
+
+    </style>
+</head>
+<body>
+    <div class="all" >
+        <h1>YUOL成绩查询系统</h1>
+        
+
+            <div class="info" >
+                
+                <ul class="s_info" > <li class="ss_info" >姓名：</li> <li class="ss_info" > {{content.姓名}}</li>  <li class="ss_info" >学号：</li> <li class="ss_info" > {{content.学号}}</li> <li class="ss_info" >性别：</li> <li class="ss_info" > {{content.性别}}</li> <li class="ss_info" >学制：</li> <li class="ss_info last" > {{content.学制}}</li> </ul>
+                <ul class="s_info" > <li class="ss_info" >院系：</li> <li class="ss_info faculty" > {{content.院系}}</li> <li class="ss_info" >专业：</li> <li class="ss_info faculty" > {{content.专业}}</li> <li class="ss_info" >年级：</li> <li class="ss_info last" > {{content.年级}}</li> </ul>
+                <ul class="s_info" > <li class="ss_info classroom" >所属班级：</li> <li class="ss_info" > {{content.所属班级}}</li> <li class="ss_info classroom">所属校区：</li> <li class="ss_info">{{content.所属校区}}</li> <li class="ss_info classroom">是否有学籍：</li> <li class="ss_info last ">{{content.是否有学籍}}</li> </ul>
+                <ul class="s_info" > <li class="ss_info classroom " >学籍状态：</li> <li class="ss_info" > {{content.学籍状态}}</li> <li class="ss_info">学历层次:</li> <li class=" ss_info">{{content.学历层次}}</li> <li class="ss_info classroom">学生类别：</li>  <li class="ss_info classroom last">{{content.学生类别}}</li> </ul>
+            </div>
+            <div class="grades" >
+            <ul class="grade"><li class="gg_info" >课程名称</li> <li class="ggs_info" >课程时间</li> <li class="g_info" >课程类别</li> <li class="g_info" >学分</li> <li class="g_info" >成绩</li> <li class="g_info last" >绩点</li> </ul>
+            
+        </div>
+        {% for grade in content.成绩 %}
+
+        <ul class="grade"><li class="gg_info" >{{grade.课程名称}}</li>  <li class="ggs_info" >{{grade.学年学期}}</li> <li class="g_info" >{{grade.课程类别}}</li> <li class="g_info" >{{grade.学分}}</li> <li class="g_info" >{{grade.最终}}</li> <li class="g_info last" >{{grade.绩点}}</li></ul>
+        
+    </div> 
+</body> 
+</html> 

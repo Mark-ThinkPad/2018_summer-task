@@ -1,0 +1,15 @@
+{% extends "base.html" %}
+{% block content %}
+<form class="info_form" action="/info" method="POST" >
+<div class="line" ><div class="key" >学号：</div> <input type="text" name="username" id="username"></div>
+<div class="line" ><div class="key" >密码：</div> <input type="password" name="password" id="password"></div>
+<div class="center"><input type="submit" value="登录" > </div>
+</form>
+<div class="line"><font color="dc134c">想自动收到成绩更新的通知邮件吗, 加入订阅服务吧!</font></div>
+<form class="info_form" action="/join" method="POST">
+<div class="line" ><div class="key" >学号：</div> <input type="text" name="username" id="username"></div>
+<div class="line" ><div class="key" >密码：</div> <input type="password" name="password" id="password"></div>
+<div class="line" ><div class="key" >邮箱：</div> <input type="email" name="email" id="email"></div>
+<div class="center"><input type="submit" value="点击加入订阅服务" ></div>
+</form>
+{% endblock %}
